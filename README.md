@@ -28,3 +28,25 @@ ls
 sudo apt autoremove -y
 rm -rf bashtop
 ls 
+
+# CREACION DE TAREA Y ACTUALIZACION 
+
+sudo crontab -e
+ 
+0 23 * * * apt update && apt upgrade -y
+ ctrl  + x para guardar 
+
+Programe su máquina para que se reinicie todos los domingos a las 3 a.m.
+
+sudo crontab -e
+
+0 3 * * 0 /sbin/reboot
+ctrl + x
+Cree una tarea programada usando el comando "at" para que elimine el contenido de la carpeta /tmp dentro de 1 minuto. Mostrar el resultado con ls /tmp antes y despues de la ejecucion
+ls /tmp
+
+at now + 1 minute
+rm -rf /tmp/*
+Ctrl + D
+ls /tmp
+
